@@ -1,4 +1,3 @@
-import Head from "next/head";
 import path from "path";
 import fs from "fs";
 

@@ -32,12 +32,13 @@ export default function post({ post }: Props) {
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const { slug } = context.params as IParams;
 
-  const { content, frontmatter } = await getPostFromSlug(slug);
+  const post = await getPostFromSlug(slug);
+  if (!post) return { notFound: true };
 
-  const mdxSource = await serialize(content);
+  const mdxSource = await serialize(post.content);
   return {
     props: {
-      post: { mdxSource, frontmatter },
+      post: { mdxSource, frontmatter: post.frontmatter },
     },
   };
 };

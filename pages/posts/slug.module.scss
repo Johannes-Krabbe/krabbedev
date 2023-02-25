@@ -1,0 +1,21 @@
+.main {
+  padding: 20px 20px 60px;
+  max-width: 50rem;
+  margin: 0 auto;
+  .title {
+    font-size: 3rem;
+    line-height: 3.25rem;
+    text-align: center;
+    margin: 4rem 0 5rem 0;
+  }
+  .metadata {
+    color: gray;
+  }
+  .content {
+    line-height: 1.75rem;
+    h1 {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
+}

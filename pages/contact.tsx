@@ -1,4 +1,3 @@
-import Head from "next/head";
 import path from "path";
 import fs from "fs";
 
@@ -12,10 +11,10 @@ interface Props {
   mdxSource: MDXRemoteSerializeResult;
 }
 
-export default function Home({ mdxSource }: Props) {
+export default function Contact({ mdxSource }: Props) {
   return (
     <div className={styles.main}>
-      <h1>Welcome!</h1>
+      <h1>Contact</h1>
       <div className={styles.content}>
         <MDXRemote {...mdxSource} />
       </div>
@@ -27,7 +26,7 @@ export const getStaticProps: GetStaticProps<{
   mdxSource: MDXRemoteSerializeResult;
 }> = async () => {
   const folderPath = path.join(process.cwd(), "content");
-  const filePath = path.join(folderPath, `index.mdx`);
+  const filePath = path.join(folderPath, `contact.mdx`);
   const source = fs.readFileSync(filePath);
 
   const mdxSource = await serialize(source.toString());

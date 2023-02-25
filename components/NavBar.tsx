@@ -22,7 +22,7 @@ export default function NavBar() {
         style={{
           overlay: {
             background: "#ffffffdd",
-            marginTop: 85,
+            marginTop: 65,
           },
         }}
         isOpen={isOpen}

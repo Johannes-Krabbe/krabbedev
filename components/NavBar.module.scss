@@ -1,4 +1,5 @@
 .navbar {
+  height: 85px;
   display: flex;
   justify-content: space-between;
   padding: 0rem 10rem;
@@ -30,6 +31,47 @@
     :hover {
       color: #f7faf9;
       background: #301e67;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.mobile {
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 3rem;
+  align-items: center;
+  box-shadow: 0 0.3rem 0.3rem -0.3rem rgba(0, 0, 0, 0.2);
+  a {
+    color: #03001c;
+    text-decoration: none;
+  }
+
+  .name {
+    padding: 1rem;
+    background: #03001c;
+    color: #f7faf9;
+    font-size: 1.5rem;
+  }
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+}
+
+.modal {
+  padding: 3rem;
+  .links {
+    font-size: 2.5rem;
+    line-height: 5rem;
+    font-weight: bold;
+    text-align: right;
+    a {
+      padding: 0.3rem;
+      text-decoration: none;
+      color: #03001c;
     }
   }
 }

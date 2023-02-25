@@ -19,10 +19,12 @@ export default function NavBar() {
       </div>
       <Modal
         className={styles.modal}
+        closeTimeoutMS={200}
         style={{
           overlay: {
             background: "#ffffffdd",
             marginTop: 65,
+            backdropFilter: "blur(0.15rem)",
           },
         }}
         isOpen={isOpen}

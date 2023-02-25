@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
       <Head>
-        <title>dings</title>
+        <title>krabbe.dev</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

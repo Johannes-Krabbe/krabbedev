@@ -4,7 +4,7 @@ import styles from "./NavBar.module.scss";
 import { useState } from "react";
 import Modal from "react-modal";
 
-export default function NavBar() {
+export default function NavBar(): JSX.Element {
   const [isOpen, setOpen] = useState(false);
 
   return (

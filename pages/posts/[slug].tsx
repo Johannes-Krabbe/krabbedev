@@ -5,6 +5,7 @@ import { getSlugs } from "@/utils/getSlugs";
 import { ParsedUrlQuery } from "querystring";
 import { getPostFromSlug } from "@/utils/getPost";
 import styles from "./slug.module.scss";
+import NavBar from "@/components/NavBar";
 
 interface Props {
   post: {
@@ -19,13 +20,16 @@ interface IParams extends ParsedUrlQuery {
 
 export default function post({ post }: Props) {
   return (
-    <div className={styles.main}>
-      <h1 className={styles.title}>{post.frontmatter.title}</h1>
-      <div className={styles.metadata}>{post.frontmatter.publishedAt}</div>
-      <div className={styles.content}>
-        <MDXRemote {...post.mdxSource} />
+    <>
+      <NavBar selectedPage="posts" />
+      <div className={styles.main}>
+        <h1 className={styles.title}>{post.frontmatter.title}</h1>
+        <div className={styles.metadata}>{post.frontmatter.publishedAt}</div>
+        <div className={styles.content}>
+          <MDXRemote {...post.mdxSource} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

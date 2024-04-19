@@ -6,35 +6,39 @@ import dayjs from "dayjs";
 import { getAllPosts } from "@/utils/getPost";
 
 import styles from "./posts.module.scss";
+import NavBar from "@/components/NavBar";
 
 interface Props {
   posts: any[];
 }
 
-export default function BlogPage({ posts }: Props) {
+export default function PostsPage({ posts }: Props) {
   return (
-    <React.Fragment>
-      <Head>
-        <title>My Blog</title>
-      </Head>
-      <div className={styles.postList}>
-        {posts.map((frontMatter) => {
-          return (
-            <div key={frontMatter.slug} className={styles.item}>
-              <Link href={`/posts/${frontMatter.slug}`} passHref>
-                <div>
-                  <h1 className="title">{frontMatter.title}</h1>
-                  <p className="summary">{frontMatter.excerpt}</p>
-                  <p className="date">
-                    {dayjs(frontMatter.publishedAt).format("MMMM D, YYYY")}
-                  </p>
-                </div>
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-    </React.Fragment>
+    <>
+      <NavBar selectedPage="posts" />
+      <React.Fragment>
+        <Head>
+          <title>My Blog</title>
+        </Head>
+        <div className={styles.postList}>
+          {posts.map((frontMatter) => {
+            return (
+              <div key={frontMatter.slug} className={styles.item}>
+                <Link href={`/posts/${frontMatter.slug}`} passHref>
+                  <div>
+                    <h1 className="title">{frontMatter.title}</h1>
+                    <p className="summary">{frontMatter.excerpt}</p>
+                    <p className="date">
+                      {dayjs(frontMatter.publishedAt).format("MMMM D, YYYY")}
+                    </p>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </React.Fragment>
+    </>
   );
 }
 

@@ -1,4 +1,3 @@
-import NavBar from "@/components/NavBar";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Rubik } from "next/font/google";
@@ -11,6 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <style jsx global>{`
         html {
           font-family: ${rubik.style.fontFamily};
+          font-size: 14px;
         }
       `}</style>
       <Head>
@@ -18,7 +18,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavBar />
       <Component {...pageProps} />
     </>
   );

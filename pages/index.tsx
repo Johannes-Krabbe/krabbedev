@@ -7,6 +7,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import styles from "./home.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import NavBar from "@/components/NavBar";
 
 interface Props {
   mdxSource: MDXRemoteSerializeResult;
@@ -14,8 +15,9 @@ interface Props {
 
 export default function Home({ mdxSource }: Props) {
   return (
-    <div className={styles.main}>
-      <div className={styles.content}>
+    <>
+      <NavBar selectedPage="home" />
+      <div className={styles.main}>
         <div className={styles.header}>
           <div className={styles.image}>
             <Image
@@ -50,11 +52,21 @@ export default function Home({ mdxSource }: Props) {
                   height={50}
                 />
               </Link>
+
+              <Link href={"mailto:contact@krabbe.dev"}>
+                <Image
+                  className={styles.nextImage}
+                  src="/emailLogo.svg"
+                  alt="email"
+                  width={50}
+                  height={50}
+                />
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

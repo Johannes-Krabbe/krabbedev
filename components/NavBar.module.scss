@@ -1,10 +1,14 @@
 .navbar {
   height: 85px;
   display: flex;
-  justify-content: space-between;
-  padding: 0rem 10rem;
+  justify-content: center;
   align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
   a {
+    margin: 0 1rem;
+    padding: 0.3rem;
     color: #03001c;
     text-decoration: none;
   }
@@ -17,16 +21,11 @@
   .name:hover {
     background: #301e67;
   }
-  .links {
-    font-size: 1rem;
-    font-weight: bold;
-    display: flex;
-    a {
-      margin-left: 1.75rem;
-      padding: 0.3rem;
-    }
-  }
+
   .linktext {
+    .selected {
+      text-decoration: underline;
+    }
     :hover {
       color: #f7faf9;
       background: #301e67;
